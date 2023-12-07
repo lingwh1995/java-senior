@@ -69,7 +69,7 @@ class SingleLinkedList {
 	
 	/**
 	 * 添加链表节点
-	 * @param node
+	 * @param node 链表节点
 	 */
 	public void addElement(SingleLinkedNode node) {
 		SingleLinkedNode tempNode = headNode;
