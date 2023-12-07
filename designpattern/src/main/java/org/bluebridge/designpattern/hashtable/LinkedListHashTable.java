@@ -12,7 +12,7 @@ public class LinkedListHashTable {
 
 	/**
 	 * 给hashTable中添加元素
-	 * @param node
+	 * @param node 单链表节点
 	 */
 	public void add(SingleLinkedNode node) {
 		int elementId = node.elementId;
