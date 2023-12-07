@@ -9,7 +9,7 @@ import java.util.Stack;
  */
 public class LinkedListHashTable {
 	private SingleLinkedList[] hashTable = new SingleLinkedList[10];
-	
+
 	/**
 	 * 给hashTable中添加元素
 	 * @param node
