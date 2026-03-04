@@ -1,0 +1,45 @@
+设计模式核心知识点
+
+1. 什么是设计模式
+   设计模式是对软件设计中普遍存在（反复出现）的各种问题，所提出的标准化解决方案。
+
+2. 设计模式的目的
+   1) 代码重用性
+   2) 代码可读性
+   3) 可扩展性
+   4) 可靠性
+   5) 使程序呈现高内聚、低耦合的特征
+
+3. 设计模式五大原则(SOLID原则)
+   S - 单一职责原则(Single Responsibility Principle, SRP)
+       一个类只负责一项职责，将不同的功能分离到不同的类中。
+   O - 开闭原则原则(Open-Closed Principle, OCP)
+       对扩展开放，对修改关闭，强调用抽象构建框架，用实现扩展细节。
+   L - 里氏替换原则(Liskov Substitution Principle, LSP)
+       子类应该能够替换掉父类，继承关系要建立在 is-a 基础上。
+   I - 接口隔离原则(Interface Segregation Principle, ISP)
+       客户端不应该依赖它不需要的接口，即一个类对另一个类的依赖应建立在最小接口上。
+   D - 依赖倒置原则(Dependency Inversion Principle, DIP)
+       面向接口编程，依赖于抽象而不依赖于具体实现。
+
+4. 设计模式七大原则 = 五大原则(SOLID原则) + 迪米特法则 + 合成复用原则
+   S - 单一职责原则(Single Responsibility Principle, SRP)
+       一个类只负责一项职责，将不同的功能分离到不同的类中。
+   O - 开闭原则原则(Open-Closed Principle, OCP)
+       对扩展开放，对修改关闭，强调用抽象构建框架，用实现扩展细节。
+   L - 里氏替换原则(Liskov Substitution Principle, LSP)
+       子类应该能够替换掉父类，继承关系要建立在 is-a 基础上。
+   I - 接口隔离原则(Interface Segregation Principle, ISP)
+       客户端不应该依赖它不需要的接口，即一个类对另一个类的依赖应建立在最小接口上。
+   D - 依赖倒置原则(Dependency Inversion Principle, DIP)
+       面向接口编程，依赖于抽象而不依赖于具体实现。
+
+   迪米特法则 (Demeter Law)
+       一个对象应该对其他对象有最少的了解，只与直接的朋友通信，降低类之间的耦合。
+   合成复用原则 (Composite Reuse Principle, CRP)
+       尽量使用对象组合/聚合而非继承来实现复用，保持类之间的松耦合关系。
+
+5. 七大设计原则核心思想
+   1) 找出应用中可能变化的部分，独立出来，避免与不变代码混合。
+   2) 针对接口编程，而非针对实现编程。
+   3) 追求交互对象之间的松耦合设计。
