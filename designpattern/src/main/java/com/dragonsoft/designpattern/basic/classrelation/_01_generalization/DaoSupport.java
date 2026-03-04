@@ -1,4 +1,4 @@
-package com.dragonsoft.designpattern.basic.classrelation.generalization;
+package com.dragonsoft.designpattern.basic.classrelation._01_generalization;
 
 public abstract class DaoSupport {
     public void save(Object object){}

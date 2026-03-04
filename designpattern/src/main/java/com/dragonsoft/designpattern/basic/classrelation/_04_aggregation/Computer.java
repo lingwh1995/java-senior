@@ -1,4 +1,4 @@
-package com.dragonsoft.designpattern.basic.classrelation.aggregation;
+package com.dragonsoft.designpattern.basic.classrelation._04_aggregation;
 
 public class Computer {
     //显示器可以和Computer分离

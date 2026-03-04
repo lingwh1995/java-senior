@@ -1,4 +1,4 @@
-package com.dragonsoft.designpattern.basic.classrelation.realization;
+package com.dragonsoft.designpattern.basic.classrelation._02_realization;
 
 public class PersonServiceBean implements PersonService{
     @Override

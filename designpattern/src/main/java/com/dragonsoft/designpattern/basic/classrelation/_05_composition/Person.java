@@ -1,4 +1,4 @@
-package com.dragonsoft.designpattern.basic.classrelation.composition;
+package com.dragonsoft.designpattern.basic.classrelation._05_composition;
 
 public class Person {
     //组合关系，Person和Head是无法分开的

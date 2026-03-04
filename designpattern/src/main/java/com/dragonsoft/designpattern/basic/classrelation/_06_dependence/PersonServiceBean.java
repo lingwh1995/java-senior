@@ -1,4 +1,4 @@
-package com.dragonsoft.designpattern.basic.classrelation.dependence;
+package com.dragonsoft.designpattern.basic.classrelation._06_dependence;
 
 public class PersonServiceBean {
     private PersonDao personDao;
