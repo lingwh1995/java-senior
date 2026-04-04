@@ -9,9 +9,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>algorithm</module>
-        <module>datastructure</module>
-        <module>designpattern</module>
+        <module>03_algorithm</module>
+        <module>02_data_structure</module>
+        <module>01_design_pattern</module>
+        <module>04_fundamental_concept</module>
     </modules>
 
     <properties>

@@ -1,0 +1,10 @@
+package org.bluebride.design_pattern._04_action.strategy.factory;
+
+public class ChineseBargain implements Bargain {
+
+	@Override
+	public void bargain() {
+		System.out.println("中国人说汉语讲价...");
+	}
+
+}
