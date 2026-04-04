@@ -5,14 +5,14 @@ package org.bluebridge.fundamental_concept;
  * @desc
  * @date 2026/3/14 15:09
  */
-public class MyBitMap {
+public class BitMap {
 
     private final int[] bits;
     // int 类型占 32 位
     private static final int UNIT = 32;
 
     // 初始化位图：max 表示能存储的最大数字
-    public MyBitMap(int max) {
+    public BitMap(int max) {
         bits = new int[max / UNIT + 1];
     }
 
@@ -36,16 +36,6 @@ public class MyBitMap {
         int arrayIndex = num / UNIT;
         int bitOffset = num % UNIT;
         bits[arrayIndex] &= ~(1 << bitOffset);
-    }
-
-    // 测试
-    public static void main(String[] args) {
-        MyBitMap bitMap = new MyBitMap(100);
-        bitMap.set(35);
-        System.out.println(bitMap.get(35)); // true
-        System.out.println(bitMap.get(36)); // false
-        bitMap.clear(35);
-        System.out.println(bitMap.get(35)); // false
     }
 
 }

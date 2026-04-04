@@ -1,7 +1,5 @@
 package org.bluebridge.fundamental_concept;
 
-import java.util.BitSet;
-
 /**
  * @author lingwh
  * @desc jdk自带的位图
@@ -11,7 +9,7 @@ public class BitSetTest {
 
     public static void main(String[] args) {
         // 1. 创建位图(默认长度64位，可自动扩容)
-        BitSet bitSet = new BitSet();
+        java.util.BitSet bitSet = new java.util.BitSet();
 
         // 2. 设置位：标记数字 5、10、100000 存在
         bitSet.set(5);
