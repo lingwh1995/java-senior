@@ -11,7 +11,12 @@ public class BitSetBitField {
 
     private BitSet bitSet = new BitSet();
 
-    // 设置位域
+    /**
+     * 设置位域
+     * @param offset
+     * @param length
+     * @param value
+     */
     public void set(int offset, int length, int value) {
         for (int i = 0; i < length; i++) {
             boolean bit = ((value >> i) & 1) == 1;
@@ -19,7 +24,12 @@ public class BitSetBitField {
         }
     }
 
-    // 获取位域
+    /**
+     * 获取位域
+     * @param offset
+     * @param length
+     * @return
+     */
     public int get(int offset, int length) {
         int value = 0;
         for (int i = 0; i < length; i++) {

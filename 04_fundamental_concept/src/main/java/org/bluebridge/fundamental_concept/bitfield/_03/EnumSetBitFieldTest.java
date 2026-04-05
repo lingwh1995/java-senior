@@ -1,33 +1,26 @@
 package org.bluebridge.fundamental_concept.bitfield._03;
 
-import static org.bluebridge.fundamental_concept.bitfield._03.EnumSetBitField.Permission.*;
+import java.util.EnumSet;
 
 /**
  * @author lingwh
- * @desc
+ * @desc EnumSetBitField 测试类
+ *       功能：验证枚举位操作、二进制转换、协议数值互转
  * @date 2026/4/4 20:36
  */
 public class EnumSetBitFieldTest {
 
     public static void main(String[] args) {
-        EnumSetBitField bitField = new EnumSetBitField();
+        // 模拟设备状态：电源开启 + 就绪
+        EnumSet<EnumSetBitField> status = EnumSet.of(
+                EnumSetBitField.POWER,
+                EnumSetBitField.READY
+        );
 
-        // 测试添加权限
-        bitField.add(READ);
-        bitField.add(WRITE);
-        System.out.println("After add READ, WRITE: " + bitField.getAll());
-        System.out.println("Has READ: " + bitField.has(READ));   // true
-        System.out.println("Has DELETE: " + bitField.has(DELETE)); // false
-
-        // 测试删除权限
-        bitField.remove(READ);
-        System.out.println("\nAfter remove READ: " + bitField.getAll());
-        System.out.println("Has READ: " + bitField.has(READ)); // false
-
-        // 测试批量添加
-        bitField.add(DELETE);
-        bitField.add(ADMIN);
-        System.out.println("\nAfter add DELETE, ADMIN: " + bitField.getAll());
+        // 输出调试信息
+        System.out.println("状态列表：" + status);
+        System.out.println("二进制位：" + EnumSetBitField.toBinaryString(status));
+        System.out.println("协议数值：" + EnumSetBitField.toLong(status));
     }
 
 }

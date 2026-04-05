@@ -8,7 +8,7 @@ import java.nio.ByteOrder;
  * @desc
  * @date 2026/4/4 20:59
  */
-public class UnionIpConverter {
+public class IpConverter {
 
     /**
      * 整型 IP -> 字符串 IP
@@ -37,4 +37,32 @@ public class UnionIpConverter {
         return a + "." + b + "." + c + "." + d;
     }
 
+    /**
+     * 字符串 IP -> 整型 IP (反向转换，与 intToIp 完全互转)
+     * @param ipStr 如 "192.168.1.100"
+     * @return int 型 IP
+     */
+    public static int ipToInt(String ipStr) {
+        // 1. 按 . 分割IP
+        String[] parts = ipStr.split("\\.");
+        int o1 = Integer.parseInt(parts[0]);
+        int o2 = Integer.parseInt(parts[1]);
+        int o3 = Integer.parseInt(parts[2]);
+        int o4 = Integer.parseInt(parts[3]);
+
+        // 2. 分配4字节缓冲区
+        ByteBuffer bb = ByteBuffer.allocate(4);
+        // 必须和 intToIp 一致：大端
+        bb.order(ByteOrder.BIG_ENDIAN);
+
+        // 3. 按网络字节序写入4个字节
+        bb.put((byte) o1);
+        bb.put((byte) o2);
+        bb.put((byte) o3);
+        bb.put((byte) o4);
+
+        // 4. 切换为读模式，获取int
+        bb.flip();
+        return bb.getInt();
+    }
 }
