@@ -1,4 +1,4 @@
-package org.bluebridge.general_concept._07_endian._01;
+package org.bluebridge.general_concept._07_endian._02;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -33,45 +33,39 @@ public class EndianUtils {
     }
 
     /**
-     * 判读当前系统字节序是否为小端
+     * 判断系统字节序：true=小端(x86/ARM)，false=大端
      * @return
      */
-    public static boolean isLittleEndian() {
-        return ByteOrder.nativeOrder() == ByteOrder.LITTLE_ENDIAN;
+    private static boolean isLittleEndian() {
+        // 用 ByteBuffer 模拟 C 语言的「取低地址字节」逻辑
+        ByteBuffer buffer = ByteBuffer.allocate(2);
+        // 设置为系统原生字节序
+        buffer.order(ByteOrder.nativeOrder());
+        buffer.putShort((short) 0x0001);
+        // 取第一个字节（低地址）判断
+        return buffer.get(0) == 1;
     }
 
     /**
      * 16位：主机字节序 -> 网络字节序(大端)
-     * @param hostShort
-     * @return
      */
-    public static short htons(short hostShort) {
-        if (isLittleEndian()) {
-            // 小端：交换高低字节
-            // 注意：Java 的 short 是有符号的，位运算时要 &0xFF 避免符号扩展
-            return (short) (((hostShort & 0xFF) << 8) | ((hostShort >> 8) & 0xFF));
-        } else {
-            // 大端：直接返回
-            return hostShort;
-        }
+    public static short htons(short s) {
+        ByteBuffer buffer = ByteBuffer.allocate(2).order(ByteOrder.BIG_ENDIAN);
+        buffer.putShort(s);
+        // 这里不链式调用，就不会变成父类 Buffer
+        buffer.flip();
+        return buffer.getShort();
     }
 
     /**
      * 32位：主机字节序 -> 网络字节序(大端)
-     * @param hostLong
-     * @return
      */
-    public static int htonl(int hostLong) {
-        if (isLittleEndian()) {
-            // 小端：4字节倒序
-            return ((hostLong & 0x000000FF) << 24) |
-                    ((hostLong & 0x0000FF00) << 8)  |
-                    ((hostLong & 0x00FF0000) >> 8)  |
-                    ((hostLong & 0xFF000000) >> 24);
-        } else {
-            // 大端：直接返回
-            return hostLong;
-        }
+    public static int htonl(int i) {
+        ByteBuffer buffer = ByteBuffer.allocate(2).order(ByteOrder.BIG_ENDIAN);
+        buffer.putInt(i);
+        // 这里不链式调用，就不会变成父类 Buffer
+        buffer.flip();
+        return buffer.getInt();
     }
 
     /**

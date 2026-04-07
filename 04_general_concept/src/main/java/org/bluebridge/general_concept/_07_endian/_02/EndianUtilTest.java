@@ -1,4 +1,6 @@
-package org.bluebridge.general_concept._07_endian._01;
+package org.bluebridge.general_concept._07_endian._02;
+
+import org.bluebridge.general_concept._07_endian._01.EndianUtils;
 
 import java.nio.ByteOrder;
 
