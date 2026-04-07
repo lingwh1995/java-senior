@@ -12,7 +12,7 @@
         <module>03_algorithm</module>
         <module>02_data_structure</module>
         <module>01_design_pattern</module>
-        <module>04_fundamental_concept</module>
+        <module>04_general_concept</module>
     </modules>
 
     <properties>
